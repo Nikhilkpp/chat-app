@@ -6,7 +6,7 @@ import Login from './pages/login/Login'
 import SignUp from './pages/signup/SignUp'
 import Home from './pages/home/Home'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { useAuthContext } from '../contexts/AuthContext'
+import { useAuthContext } from './contexts/AuthContext'
 function App() {
   const [count, setCount] = useState(0)
   const {authUser} = useAuthContext();

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BsSend } from "react-icons/bs";
-import useSendMessage from '../../../hooks/useSendMessage';
+import useSendMessage from '../../hooks/useSendMessage';
 
 function MessageInput() {
 	const {loading, sendMessage} = useSendMessage()

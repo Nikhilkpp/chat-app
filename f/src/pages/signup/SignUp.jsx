@@ -3,7 +3,7 @@ import toast from 'react-hot-toast'
 
 import GenderCheckbox from "./GenderCheckbox";
 import { Link } from 'react-router-dom';
-import { useSignup } from '../../../hooks/useSignup.js';
+import { useSignup } from '../../hooks/useSignup.js';
 
 const SignUp = () => {
 	const [input, setInput] = useState({

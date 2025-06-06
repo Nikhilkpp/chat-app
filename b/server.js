@@ -7,13 +7,14 @@ import userRouter from "./routes/user.routes.js";
 import cookieParser from "cookie-parser";
 
 import cors from 'cors'
+import { app, server } from "./socket/socket.js";
 
 
 dotenv.config()
 
 const PORT=process.env.PORT || 5000;
 
-const app=express();
+// const app=express();    socket se aarha
 
 // app.get('/', (req,res)=>{
 //     res.send("Hello world again!")
@@ -28,7 +29,7 @@ app.use(cors({
     credentials:true
 }))
 
-app.listen(PORT,()=> {
+server.listen(PORT,()=> {
     connectToMongo()
     console.log("Server is listing",PORT
         

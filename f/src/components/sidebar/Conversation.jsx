@@ -1,6 +1,7 @@
 import React from 'react'
-import useConversation from '../../../zustand/useConversation'
-import { useGetMessages } from '../../../hooks/useGetMessages';
+import useConversation from '../../zustand/useConversation'
+import { useGetMessages } from '../../hooks/useGetMessages';
+import { useSocketContext } from '../../contexts/socketContext';
 
 function Conversation({conversation,lastIdx}) {
 
@@ -8,7 +9,12 @@ function Conversation({conversation,lastIdx}) {
 
 	const isSelected = selectedConversation?._id === conversation._id;
 
-	console.log(isSelected);
+	// console.log(isSelected);
+
+	const {onlineUsers } = useSocketContext();
+	const isOnline = onlineUsers.includes(conversation._id); 
+
+
 	
   return (
         <>
@@ -18,7 +24,7 @@ function Conversation({conversation,lastIdx}) {
 				
 				onClick={()=> setSelectedConversation(conversation)}
 			>
-				<div className='avatar avatar-online'>
+				<div className={`avatar ${isOnline && 'avatar-online'} `}>
 					<div className='w-12 rounded-full'>
 						<img
 							src={conversation.profilePic}
