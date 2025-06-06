@@ -6,6 +6,8 @@ import messageRouter from "./routes/message.routes.js";
 import userRouter from "./routes/user.routes.js";
 import cookieParser from "cookie-parser";
 
+import cors from 'cors'
+
 
 dotenv.config()
 
@@ -19,6 +21,12 @@ const app=express();
 
 app.use(express.json())
 app.use(cookieParser())
+
+app.use(cors({
+    origin:process.env.CORS_ORIGIN,
+
+    credentials:true
+}))
 
 app.listen(PORT,()=> {
     connectToMongo()
