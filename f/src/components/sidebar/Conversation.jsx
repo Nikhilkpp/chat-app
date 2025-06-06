@@ -1,7 +1,7 @@
 import React from 'react'
 import useConversation from '../../zustand/useConversation'
 import { useGetMessages } from '../../hooks/useGetMessages';
-import { useSocketContext } from '../../contexts/socketContext';
+import { useSocketContext } from '../../contexts/SocketContext';
 
 function Conversation({conversation,lastIdx}) {
 
