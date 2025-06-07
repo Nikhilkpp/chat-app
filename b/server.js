@@ -41,6 +41,12 @@ app.use("/api/messages", messageRouter)
 app.use("/api/users", userRouter)
 app.use(express.static(path.join(__dirname, "/f/dist")));
 
-app.get("", (req,res)=>{
+app.get("*", (req,res)=>{
     res.sendFile(path.join(__dirname, "f", "dist", "index.html"))
 })
+
+server.listen(PORT,()=> {
+    connectToMongo()
+    console.log("Server is listing",PORT
+        
+    )});
