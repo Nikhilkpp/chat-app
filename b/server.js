@@ -59,7 +59,7 @@ import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
-import connectToMongoDB from "./db/connectToMongoDB.js";
+import connectToMongo from "./db/connectToMongo.js";
 import { app, server } from "./socket/socket.js";
 
 dotenv.config();
@@ -89,6 +89,6 @@ app.get("*", (req, res) => {
 });
 
 server.listen(PORT, () => {
-	connectToMongoDB();
+	connectToMongo();
 	console.log(`Server Running on port ${PORT}`);
 });
