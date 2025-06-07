@@ -19,7 +19,7 @@ const userSocketMap = {}
 const initSocket = (server) =>{
     io = new Server(server, {
         cors:{
-            origin: ["https://chat-app-ep85.onrender.com"],
+            origin: ["http://localhost:5173"],
             methods: ["GET", "POST"]
         },
     })
