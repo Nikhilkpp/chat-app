@@ -10,12 +10,12 @@ import { SocketContextProvider } from './contexts/SocketContext.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <AuthContextProvider>
-      <SocketContextProvider>
-        <App />
-        <Toaster />
-      </SocketContextProvider>
-    </AuthContextProvider>
+      <AuthContextProvider>
+        <SocketContextProvider>
+          <App />
+          <Toaster />
+        </SocketContextProvider>
+      </AuthContextProvider>
     </BrowserRouter>
   </StrictMode>
 )

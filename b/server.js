@@ -31,11 +31,7 @@ app.use(cors({
     credentials:true
 }))
 
-server.listen(PORT,()=> {
-    connectToMongo()
-    console.log("Server is listing",PORT
-        
-    )});
+
 app.use("/api/auth",authRouter)
 app.use("/api/messages", messageRouter)
 app.use("/api/users", userRouter)
@@ -46,7 +42,6 @@ app.get("*", (req,res)=>{
 })
 
 server.listen(PORT,()=> {
-    connectToMongo()
-    console.log("Server is listing",PORT
-        
-    )});
+    connectToMongo();
+    console.log("Server is listening",PORT);
+});
