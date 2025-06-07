@@ -6,7 +6,7 @@
 // import userRouter from "./routes/user.routes.js";
 // import cookieParser from "cookie-parser";
 // import path from 'path';
-// import cors from 'cors'
+import cors from 'cors'
 // import { initSocket } from "./socket/socket.js";
 // import http from 'http';
 
