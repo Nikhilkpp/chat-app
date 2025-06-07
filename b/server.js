@@ -7,7 +7,7 @@ import userRouter from "./routes/user.routes.js";
 import cookieParser from "cookie-parser";
 import path from 'path';
 import cors from 'cors'
-import { app, server } from "./socket/socket.js";
+import { initSocket, server } from "./socket/socket.js";
 
 
 dotenv.config()
@@ -16,8 +16,9 @@ const PORT=process.env.PORT || 5000;
 
 const __dirname = path.resolve();
 
-// const app=express();    socket se aarha
-
+const app=express();   // socket se aarha
+const server = http.createServer(app);
+initSocket(server)
 // app.get('/', (req,res)=>{
 //     res.send("Hello world again!")
 // })
