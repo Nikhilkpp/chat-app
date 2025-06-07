@@ -55,5 +55,5 @@ export const getReceiverSocketId = (receiverId) => {
 }
 
 // export {app, io, sever}
-export {initSocket}
+export {initSocket, io}
 
