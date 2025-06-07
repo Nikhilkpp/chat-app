@@ -14,6 +14,11 @@ export const useGetMessages = () => {
         
                 setLoading(true)
             try {
+                if (!selectedConversation?._id) {
+                    console.warn("No conversation selected — skipping fetch");
+                    toast.error('No selected')
+                    return;
+                  }
                 const res = await fetch(`http://localhost:8000/api/messages/${selectedConversation?._id}`,{
                     method:"GET",
                     credentials:"include"
